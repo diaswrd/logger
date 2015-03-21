@@ -105,7 +105,7 @@ function log(ctx, start, len, err, event) {
 
   var upstream = err ? '\x1B[31mxxx'
     : event === 'close' ? '\x1B[33m-x-'
-    : '\x1B[90m-->';
+    : '\x1B[34m-->';
 
   console.log('  ' + upstream + ' \x1B[;36m%s\x1B[0;1m %s \x1B[' + c + 'm%s\x1B[;32m %s %s\x1B[0m',
     ctx.method,
