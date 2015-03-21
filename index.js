@@ -38,7 +38,7 @@ function dev(opts) {
   return function *logger(next) {
     // request
     var start = new Date;
-    console.log('  \x1B[90m<-- \x1B[;1m%s\x1B[0;90m %s\x1B[0m', this.method, this.url);
+    console.log('  \x1B[37m<-- \x1B[0;1m%s %s\x1B[0m', this.method, this.url);
 
     try {
       yield next;
@@ -107,7 +107,7 @@ function log(ctx, start, len, err, event) {
     : event === 'close' ? '\x1B[33m-x-'
     : '\x1B[90m-->';
 
-  console.log('  ' + upstream + ' \x1B[;1m%s\x1B[0;90m %s \x1B[' + c + 'm%s\x1B[90m %s %s\x1B[0m',
+  console.log('  ' + upstream + ' \x1B[;36m%s\x1B[0;1m %s \x1B[' + c + 'm%s\x1B[;32m %s %s\x1B[0m',
     ctx.method,
     ctx.originalUrl,
     status,
