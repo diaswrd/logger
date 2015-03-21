@@ -38,7 +38,7 @@ function dev(opts) {
   return function *logger(next) {
     // request
     var start = new Date;
-    console.log('  \x1B[90m<-- \x1B[;1m%s\x1B[0;90m %s\x1B[0m', this.method, this.url);
+    console.log('  \x1B[37m<-- \x1B[0;1m%s\x1B[0;1m %s\x1B[0m', this.method, this.url);
 
     try {
       yield next;
